@@ -96,7 +96,7 @@ Agenda: Discuss application function, requirements, objectives, constraints, and
 | Nathan |Finish problem definition | Done|  |
 | Rudra | Meet and discuss application function, objectives, and constraints | Done | |
 | Rida | Meet and discuss application function, objectives, and constraintss | Done |  |
-| Youssef | N/A | N/A |  |
+| Youssef | Meet and discuss application function, objectives, and constraints | Done |  |
 
 
 
