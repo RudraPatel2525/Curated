@@ -48,8 +48,12 @@ This project is defined as the design, development, and comprehensive testing of
 
 ### 2.2.1 Functions
 The primary function of the Playlist Generator are as follows...
-- Read song data in from a database (a txt file)
-- 
+- Accept user input for playlist criteria, including genre, mood, explicit/non-explicit, max playlist size, max playlist duration
+- Read song data and song attributes from a text file
+- Filter songs based on user-defined playlist criteria
+- Use a seeded "shuffle" to generate playlist
+- Detect and handle cases where insufficient valid songs exist to generate a playlist
+- Display the generated playlist, without saving
 
 ### 2.2.2 Objectives
 
