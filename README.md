@@ -4,8 +4,8 @@
 
 **Team Members:**
 - Nathan Okoh - 200492890
-- Rida - 200504477
-- Rudra - 200498392
+- Rida Hashmi- 200504477
+- Rudra Patel - 200498392
 - Youssef Abdelaziz - 200511755
 
 ---
@@ -47,6 +47,9 @@ This project is defined as the design, development, and comprehensive testing of
 ### 2.2 Design Requirements
 
 ### 2.2.1 Functions
+The primary function of the Playlist Generator are as follows...
+- Read song data in from a database (a txt file)
+- 
 
 ### 2.2.2 Objectives
 
@@ -83,6 +86,17 @@ Agenda: Decide on Software Application
 | Rida | Brainstorm ideas | done | Meet and discuss application function, objectives, and constraints |
 
 * Youssef had not yet been added to the team.
+
+### 4.3 Meeting 3
+
+Time: Jan 20, 2026 11:45m to 12:15pm
+Agenda: Discuss application function, requirements, objectives, constraints, and name.
+| Team Member | Previous Task | Completion State | Next Task |
+|------------|---------------|------------------|-----------|
+| Nathan |Finish problem definition | Done|  |
+| Rudra | Meet and discuss application function, objectives, and constraints | Done | |
+| Rida | Meet and discuss application function, objectives, and constraintss | Done |  |
+| Youssef | N/A | N/A |  |
 
 
 
