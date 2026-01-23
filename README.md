@@ -76,9 +76,16 @@ To achieve these objectives, the project will:
 - Use a minimalist UI/interface to keep focus on validation, verification, and system behavior rather than aesthetics.
 
 ### 2.2.3 Constraints
-**| Constraint | Description |**
-| UI / Interface Constraints | - The application will use a simple, minimalist interface (text-based or basic GUI). - UI design prioritizes functionality and testability over visual design. - No advanced frontend frameworks or UI-heavy features will be used. |
 ---
+| Constraint | Description |
+|----------|----------|
+| UI / Interface Constraints | <ul><li>The application will use a simple, minimalist interface (text-based or basic GUI).</li><li>
+UI design prioritizes functionality and testability over visual design.</li><li>No advanced frontend frameworks or UI-heavy features will be used.</li></ul> | 
+| Regulatory Compliance (Security & Access) | <ul><li>Age restrictions must be strictly enforced based on user input.</li><li>The system must comply with basic data protection principles:</li><li>No storage of personally identifiable information (PII) such as real names, emails, or listening history.</li><li>All inputs are transient and used solely for playlist generation logic.</li></ul>| 
+| Reliability & Determinism |  |
+| Technical & Development Constraints | |
+| Economic Constraints | |
+| Societal & Ethical Considerations | |
 
 ## 3.0 Solution
 
