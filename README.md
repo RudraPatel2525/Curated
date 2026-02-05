@@ -92,8 +92,34 @@ To achieve these objectives, the project will:
 ## 3.0 Solution
 In this section, you will provide an account of some solutions your team brainstormed to implement and test the project. Some solutions might not have all the desired features, some might not satisfy the constraints, or both. These solutions come up in your mind while you brainstorm ways of implementing all the features while meeting the constraints. Towards, the end you select a solution that you think has all the features, testable and satisfies all the constraints. Remember that an engineering design is iterative in nature! 
 ### 3.1	Solution 1: Dynamic Web App with External APIs
-#Description:
+# Description:
 This solution proposed a web-based application featuring a dynamic user interface. Instead of using a static local dataset, this version would utilize external APIs for retrieving song data and leverage a generative AI model (OpenAI) to create the playlists. The goal was to create a highly engaging user experience with a modern feature set.
+
+# Pros
+
+- Engaging User Experience: The dynamic UI and AI integration would provide a modern, interactive experience for the user.
+
+- Feature-Rich: Allows for complex features beyond simple filtering, such as "mood-based" generation using natural language processing.
+
+- Data Variety: Accessing external APIs would provide a significantly wider variety of songs compared to a static text file.
+
+ # Cons
+
+- High Testing Complexity: Testing requires extensive mocking of external services and UI automation.
+
+- Low Repeatability: External APIs and AI models are non-deterministic; they may produce different outputs for the same input, making regression testing difficult.
+
+- Long Development Time: The complexity of setting up a web server and API integration would consume time needed for writing test suites.
+
+- Extensive Knowledge Requirement: Requires specialized knowledge of web frameworks and API authentication that is outside the core scope of this course.
+
+#  Reason for not selecting this solution:
+
+- Reliability Issues: For effective testing (especially regression testing), the system must be deterministic. The "Low Repeatability" of AI responses means we cannot write stable assertions (e.g., assert that 'Happy' input always returns 'Song A').
+
+- Scope Creep: The "Long Dev Time" required to build the web infrastructure would leave insufficient time to implement the required testing strategies (TDD, Path Testing, State Transition).
+
+- Validation Difficulties: Validating a dynamic web UI is far more complex than validating a modular backend logic, forcing us to focus on "making it work" rather than "testing it thoroughly."
 ### 3.2	Solution 2
 This is an improved solution but might not be the final solution that you select. Give a brief description of this solution here. Again focus on its testing attributes. 
 
