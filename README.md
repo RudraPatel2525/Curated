@@ -152,6 +152,7 @@ Collects and validates user input (genre, mood, explicit flag, size).
 - Boundary testing (playlist size limits)
 - Path testing (valid vs invalid branches)
 
+
 #### Component 2: Song Database Loader
 #### Purpose:
 Reads songs from structured text file and converts them into Song objects.
@@ -160,6 +161,7 @@ Reads songs from structured text file and converts them into Song objects.
 - File parsing tests
 - Edge case testing (empty file, malformed data)
 - Assertion of correct object creation
+
 
 #### Component 3: Filtering Engine
 #### Purpose:
@@ -170,6 +172,7 @@ Filters songs based on user criteria (genre, mood, explicit, etc.).
 - Path testing (multiple condition combinations)
 - Assertion testing for correct subset selection
 
+
 #### Component 4: Playlist Generator
 #### Purpose:
 Selects requested number of songs and applies seed-based shuffle.
@@ -178,6 +181,7 @@ Selects requested number of songs and applies seed-based shuffle.
 - Deterministic output validation (same seed → same playlist)
 - Boundary testing (requesting more songs than available)
 - State testing (empty filtered list behavior)
+
 
 #### Component 5: Output Formatter
 #### Purpose:
