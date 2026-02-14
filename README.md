@@ -98,30 +98,44 @@ This solution proposed a web-based application featuring a dynamic user interfac
 #### Pros
 
 - Engaging User Experience: The dynamic UI and AI integration would provide a modern, interactive experience for the user.
-
 - Feature-Rich: Allows for complex features beyond simple filtering, such as "mood-based" generation using natural language processing.
-
 - Data Variety: Accessing external APIs would provide a significantly wider variety of songs compared to a static text file.
 
  #### Cons
 
 - High Testing Complexity: Testing requires extensive mocking of external services and UI automation.
-
 - Low Repeatability: External APIs and AI models are non-deterministic; they may produce different outputs for the same input, making regression testing difficult.
-
 - Long Development Time: The complexity of setting up a web server and API integration would consume time needed for writing test suites.
-
 - Extensive Knowledge Requirement: Requires specialized knowledge of web frameworks and API authentication that is outside the core scope of this course.
 
 ####  Reason for not selecting this solution:
 
 - Reliability Issues: For effective testing (especially regression testing), the system must be deterministic. The "Low Repeatability" of AI responses means we cannot write stable assertions (e.g., assert that 'Happy' input always returns 'Song A').
-
 - Scope Creep: The "Long Dev Time" required to build the web infrastructure would leave insufficient time to implement the required testing strategies (TDD, Path Testing, State Transition).
-
 - Validation Difficulties: Validating a dynamic web UI is far more complex than validating a modular backend logic, forcing us to focus on "making it work" rather than "testing it thoroughly."
-### 3.2	Solution 2
-This is an improved solution but might not be the final solution that you select. Give a brief description of this solution here. Again focus on its testing attributes. 
+### 3.2	Solution 2: Simplified Web App with Local Database
+#### Description:
+This solution proposed a simplified web-based application with a minimal graphical interface for collecting user preferences. Instead of external APIs, song data would be stored locally in a MongoDB database. Playlist generation would rely on rule-based scoring logic rather than AI.
+
+#### Pros
+
+- More Deterministic than Solution 1: Rule-based filtering ensures consistent outputs.
+- No External Dependencies: Local database avoids API mocking.
+- Better Control Over Data: Test datasets can be inserted into MongoDB for validation.
+- Supports Backend Unit Testing: Filtering logic can be tested independently.
+
+### Cons
+
+- UI Testing Still Required: Web interface requires UI automation testing (Selenium, etc.).
+- Database Dependency: Tests depend on database setup and teardown.
+- Higher Testing Overhead: Requires integration testing between UI, backend, and database.
+- More Configuration Required: MongoDB setup adds environmental complexity.
+
+### Reason for not selecting this solution: 
+
+- Database coupling complicates unit testing — requires mock databases or test containers.
+- Web UI still distracts from core testing goals.
+- Environment setup affects repeatability (database state must be reset before tests).
 
 ### 3.3	Final Solution
 The final solution is a command-line based, rule-driven playlist generator that uses a structured text file as a lightweight database. The system collects user preferences (ex: genre, mood, explicity/non-explicit, playlist size) through command-line prompts, filters songs from the database based on those criteria, and generates a playlist automatically. The final playlist is shuffled using a seed-based randomizer to simulate randomness while maintaining repeatability for testing.
@@ -129,13 +143,99 @@ The final solution is a command-line based, rule-driven playlist generator that 
 This design deliberately narrows the project scope compared to earlier solutions. It removes graphical interfaces and external API integrations in order to prioritize determinism, modularity, and testability. The system is divided into clear components like input handling, filtering logic, etc. This allows sach component to be tested independently
 
 ### 3.3.1	Components
-What components you used in the solution? What is the main purpose of using individual component? What testing method did you employ for each component? Provide a block diagram (with a numbered caption, such as Fig. 1) representing the connectivity and interaction between all the components.
+### Component 1: Input Handler
+### Purpose:
+Collects and validates user input (genre, mood, explicit flag, size).
+### Testing Method:
+- Unit testing (valid/invalid input cases)
+- Boundary testing (playlist size limits)
+- Path testing (valid vs invalid branches)
+
+### Component 2: Song Database Loader
+### Purpose:
+Reads songs from structured text file and converts them into Song objects.
+### Testing Method:
+- File parsing tests
+- Edge case testing (empty file, malformed data)
+- Assertion of correct object creation
+
+### Component 3: Filtering Engine
+### Purpose:
+Filters songs based on user criteria (genre, mood, explicit, etc.).
+### Testing Method:
+- Unit testing of each filtering rule
+- Path testing (multiple condition combinations)
+- Assertion testing for correct subset selection
+
+### Component 4: Playlist Generator
+### Purpose:
+Selects requested number of songs and applies seed-based shuffle.
+### Testing Method:
+- Deterministic output validation (same seed → same playlist)
+- Boundary testing (requesting more songs than available)
+- State testing (empty filtered list behavior)
+
+### Component 5: Output Formatter
+### Purpose:
+Formats playlist for console display.
+### Testing Method:
+- String comparison tests
+- Formatting validation
 
 ### 3.3.2	Environmental, Societal, Safety, and Economic Considerations
-Explain how your engineering design took into account environmental, societal, economic and other constraints into consideration. It may include how your design has positive contributions to the environment and society? What type of economic decisions you made? How did you make sure that the design is reliable and safe to use? 
+### Environmental Considerations
+- No external APIs → reduced server/network dependency.
+- Lightweight design → minimal computational resources.
+- No persistent cloud infrastructure → lower energy footprint.
+  
+### Societal Considerations
+- Explicit content filtering allows user control.
+- Deterministic behavior avoids unpredictable or biased AI output.
+- Transparent rule-based logic improves trustworthiness.
+  
+### Economic Considerations
+- No paid APIs or hosting services required.
+- No database licensing costs.
+- Uses open-source tools (Java, JUnit).
+  
+### Decision made:
+We deliberately chose a low-cost architecture to avoid financial overhead and ensure accessibility.
 
+### Safety and Reliability
+- Deterministic system ensures predictable outputs.
+- Input validation prevents crashes from invalid entries.
+- Modular design reduces risk of cascading failures.
+- Extensive unit testing ensures reliability.
+  
 ### 3.3.3	Test Cases and results
-What test suits did you design to test your prototype? How did you execute the test cases to test the prototype?
+### Test Suites Designed
+Input Validation Test Suite
+- Invalid genre
+- Invalid playlist size
+- Negative numbers
+- Empty input
+
+File Parsing Test Suite
+- Properly formatted file
+- Empty file
+- Corrupted line format
+
+Filtering Logic Test Suite
+- Genre-only filter
+- Mood-only filter
+- Explicit filter ON/OFF
+- Combined criteria
+
+Playlist Generation Test Suite
+- Deterministic shuffle test (same seed consistency)
+- Different seed produces different order
+- Size > available songs
+- Zero matching songs
+
+Integration Test Suite
+- Full flow simulation
+- Input → filter → generate → output
+---
 
 ### 3.3.4	Limitations
 Every product has some limitations, and so is the case with your design product. Highlight some of the limitations of your solution here. 
