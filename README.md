@@ -244,7 +244,7 @@ We deliberately chose a low-cost architecture to avoid financial overhead and en
 #### Integration Test Suite
 - Full flow simulation
 - Input → filter → generate → output
----
+
 
 ### 3.3.4	Limitations
 #### 1. Limited User Interface
