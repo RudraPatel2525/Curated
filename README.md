@@ -146,7 +146,8 @@ This design deliberately narrows the project scope compared to earlier solutions
 #### Component 1: Input Handler
 #### Purpose:
 Collects and validates user input (genre, mood, explicit flag, size).
-### Testing Method:
+
+#### Testing Method:
 - Unit testing (valid/invalid input cases)
 - Boundary testing (playlist size limits)
 - Path testing (valid vs invalid branches)
@@ -154,7 +155,8 @@ Collects and validates user input (genre, mood, explicit flag, size).
 #### Component 2: Song Database Loader
 #### Purpose:
 Reads songs from structured text file and converts them into Song objects.
-### Testing Method:
+
+#### Testing Method:
 - File parsing tests
 - Edge case testing (empty file, malformed data)
 - Assertion of correct object creation
@@ -162,7 +164,8 @@ Reads songs from structured text file and converts them into Song objects.
 #### Component 3: Filtering Engine
 #### Purpose:
 Filters songs based on user criteria (genre, mood, explicit, etc.).
-### Testing Method:
+
+#### Testing Method:
 - Unit testing of each filtering rule
 - Path testing (multiple condition combinations)
 - Assertion testing for correct subset selection
@@ -170,6 +173,7 @@ Filters songs based on user criteria (genre, mood, explicit, etc.).
 #### Component 4: Playlist Generator
 #### Purpose:
 Selects requested number of songs and applies seed-based shuffle.
+
 #### Testing Method:
 - Deterministic output validation (same seed → same playlist)
 - Boundary testing (requesting more songs than available)
@@ -178,6 +182,7 @@ Selects requested number of songs and applies seed-based shuffle.
 #### Component 5: Output Formatter
 #### Purpose:
 Formats playlist for console display.
+
 #### Testing Method:
 - String comparison tests
 - Formatting validation
@@ -238,19 +243,19 @@ We deliberately chose a low-cost architecture to avoid financial overhead and en
 ---
 
 ### 3.3.4	Limitations
-1. Limited User Interface
+#### 1. Limited User Interface
 No graphical interface reduces user engagement.
 
-2. Static Dataset
+#### 2. Static Dataset
 Song database must be manually updated.
 
-3. No AI-Based Recommendations
+#### 3. No AI-Based Recommendations
 Lacks advanced personalization.
 
-4. Scalability Limitations
+#### 4. Scalability Limitations
 Text file database not ideal for large-scale systems.
 
-5. No Real-Time Updates
+#### 5. No Real-Time Updates
 Cannot retrieve live trending songs.
 
 --
