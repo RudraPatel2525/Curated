@@ -226,6 +226,15 @@ Agenda: Set up Maven and assign roles.
 | Youssef | Finish Section 3.3.1 Solution 1 | Done | Finish FilterEngine.java file |
 
 
+### 4.3 Meeting 6
 
+Time: Mar 11, 2026, 9:40 pm to 1:00 pm
+Agenda: Set up Maven and assign roles.
+| Team Member | Previous Task | Completion State | Next Task |
+|------------|---------------|------------------|-----------|
+| Nathan | Finish Section 3.3.3 Solution 3 | Done| Finish Song.java and Shuffle.java file |
+| Rudra | Research potential database | Done | Finish Songdatabase.java file |
+| Rida | Finish Section 3.3.2 Solution 2 | Done | Finish playlist.java file |
+| Youssef | Finish Section 3.3.1 Solution 1 | Done | Finish FilterEngine.java file |
 
 
