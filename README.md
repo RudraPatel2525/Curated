@@ -220,21 +220,22 @@ Time: Feb 17, 2026, 11:40 am to 1:00 pm
 Agenda: Set up Maven and assign roles.
 | Team Member | Previous Task | Completion State | Next Task |
 |------------|---------------|------------------|-----------|
-| Nathan | Finish Section 3.3.3 Solution 3 | Done| Finish Song.java and Shuffle.java file |
-| Rudra | Research potential database | Done | Finish Songdatabase.java file |
-| Rida | Finish Section 3.3.2 Solution 2 | Done | Finish playlist.java file |
-| Youssef | Finish Section 3.3.1 Solution 1 | Done | Finish FilterEngine.java file |
+| Nathan | Finish Section 3.3.3 Solution 3 | Done| Do SongTest.java and ShuffleTest.java (Boundary, Equivalance song and shuffle logic)|
+| Rudra | Research potential database | Done | Finish SongdatabaseTest.java file |
+| Rida | Finish Section 3.3.2 Solution 2 | Done | Finish PlaylistControllerTest.java file |
+| Youssef | Finish Section 3.3.1 Solution 1 | Done | Finish FilterEngineTest.java (Boundary, Equivalence, and Filtering logic)  |
 
 
-### 4.3 Meeting 6
+### 4.4 Meeting 5
 
-Time: Mar 11, 2026, 9:40 pm to 1:00 pm
-Agenda: Set up Maven and assign roles.
+Time: Mar 11, 2026, 9:40 pm to 10:35 pm
+Agenda: Touchbase.
 | Team Member | Previous Task | Completion State | Next Task |
 |------------|---------------|------------------|-----------|
-| Nathan | Finish Section 3.3.3 Solution 3 | Done| Finish Song.java and Shuffle.java file |
-| Rudra | Research potential database | Done | Finish Songdatabase.java file |
-| Rida | Finish Section 3.3.2 Solution 2 | Done | Finish playlist.java file |
-| Youssef | Finish Section 3.3.1 Solution 1 | Done | Finish FilterEngine.java file |
+| Nathan | Do SongTest.java and ShuffleTest.java (Boundary, Equivalance song and shuffle logic) | Done| Finish Song.java and Shuffle.java file |
+| Rudra | Finish SongdatabaseTest.java file | Done | Finish Songdatabase.java file |
+| Rida | Finish PlaylistControllerTest.java file | Done | Finish playlist.java file |
+| Youssef | Finish FilterEngineTest.java (Boundary, Equivalence, and Filtering logic) | Done | Finish FilterEngine.java file |
+
 
 
