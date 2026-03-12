@@ -1,4 +1,4 @@
-package src.main.java.com.example.playlistgenerator;
+package com.example.playlistgenerator;
 
 public class Song {
     private final int id;

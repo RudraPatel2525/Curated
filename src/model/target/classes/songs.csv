@@ -1,0 +1,6 @@
+id,title,artist,genre,mood,explicit,minAge,durationSeconds
+1,Blinding Lights,The Weeknd,Pop,Happy,false,0,200
+2,Heat Waves,Glass Animals,Indie,Calm,false,0,238
+3,Mock Rap Track,Test Artist,HipHop,Energetic,true,18,185
+4,Lofi Rain,Study Beats,LoFi,Calm,false,0,240
+5,Metal Storm,Iron Unit,Metal,Angry,true,18,210

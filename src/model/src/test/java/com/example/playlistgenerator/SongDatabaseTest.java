@@ -1,13 +1,15 @@
 package com.example.playlistgenerator;
 
-import org.junit.jupiter.api.Test;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 
 class SongDatabaseTest {
 
@@ -16,9 +18,7 @@ class SongDatabaseTest {
         Path tempFile = Files.createTempFile("songs", ".csv");
 
         Files.writeString(tempFile,
-                "id,title,artist,genre,mood,explicit,minAge,durationSeconds\n" +
-                "1,Blinding Lights,The Weeknd,Pop,Happy,false,0,200\n" +
-                "2,Heat Waves,Glass Animals,Indie,Calm,false,0,238\n");
+                "id,title,artist,genre,mood,explicit,minAge,durationSeconds\n" +"1,Blinding Lights,The Weeknd,Pop,Happy,false,0,200\n" +"2,Heat Waves,Glass Animals,Indie,Calm,false,0,238\n");
 
         SongDatabase db = new SongDatabase(tempFile.toString());
 
