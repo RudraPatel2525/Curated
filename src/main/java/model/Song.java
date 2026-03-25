@@ -1,11 +1,12 @@
 package model;
 
 public class Song {
-    private int id;
-    private String title;
-    private String artist;
-    private String genre;
-    private boolean explicit;
+    // attributes are final to ensure they can't be changed after creation
+    private final int id;
+    private final String title;
+    private final String artist;
+    private final String genre;
+    private final boolean explicit;
 
     public Song(String title, String artist, String genre, boolean explicit) { // constructor to initialize song attributes
         this.id = System.identityHashCode(this); // Simple ID generation

@@ -1,4 +1,8 @@
-import java.util.*;
+package model;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
 public class Shuffle {
 
