@@ -149,16 +149,27 @@ The final solution is a command-line based, rule-driven playlist generator that 
 
 This design deliberately narrows the project scope compared to earlier solutions. It removes graphical interfaces and external API integrations in order to prioritize determinism, modularity, and testability. The system is divided into clear components like input handling, filtering logic, etc. This allows sach component to be tested independently
 
-### 3.3.1	Components
+### 3.1 Solution 1
+Write a brief description of your first solution and provide the reasons in terms of testing for not selecting this one.
 
+### 3.2 Solution 2
+This is an improved solution but might not be the final solution that you select. Give a brief description of this solution here. Again focus on its testing attributes.
+
+### 3.3 Final Solution
+This is the final solution. **Explain why it is better than other solutions (focus more on testing)**. You may use a table for comparison purposes. After providing the reason for selecting this solution, detail it below.
+
+### 3.3.1	Components
+What components you used in the solution? What is the main purpose of using individual component? What testing method did you employ for each component? Provide a block diagram (with a numbered caption, such as Fig. 1) representing the connectivity and interaction between all the components.
 
 ### 3.3.2	Environmental, Societal, Safety, and Economic Considerations
+Explain how your engineering design took into account environmental, societal, economic and other constraints into consideration. It may include how your design has positive contributions to the environment and society? What type of economic decisions you made? How did you make sure that the design is reliable and safe to use?
 
-  
 ### 3.3.3	Test Cases and results
-
+What test suits did you design to test your prototype? How did you execute the test cases to test the prototype?
 
 ### 3.3.4	Limitations
+Every product has some limitations, and so is the case with your design product. Highlight some of the limitations of your solution here.
+
 
 
 --
