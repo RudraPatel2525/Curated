@@ -148,8 +148,33 @@ This design deliberately narrows the project scope compared to earlier solutions
 | Requirement Alignment | Weak                   | Partial                     | Strong                     |
 
 
-### 3.3.1	Components
-What components you used in the solution? What is the main purpose of using individual component? What testing method did you employ for each component? Provide a block diagram (with a numbered caption, such as Fig. 1) representing the connectivity and interaction between all the components.
+### 3.3.1 Components
+
+The final solution is composed of five core components, each with a distinct 
+responsibility within the MVC architecture. This separation of concerns ensures 
+that each component can be tested independently, which is central to the 
+project's Test-Driven Development approach.
+
+| Component | Purpose | Testing Method |
+|---|---|---|
+| `Song.java` | Represents a single song with attributes: title, artist, genre, and explicit flag. Acts as the core data model. | Boundary Value Analysis, Equivalence Class Testing |
+| `SongDatabase.java` | Reads and parses song data from a `.txt` file, returning a list of `Song` objects. Decouples data loading from logic. | Equivalence Class Testing (valid/invalid file input) |
+| `FilterEngine.java` | Filters the full song list based on user criteria: genre, explicit preference, and max playlist size. Implements all rule-based logic. | Boundary Value Analysis, Equivalence Class Testing, Logic/Path Testing |
+| `Playlist.java` | Holds the final ordered list of filtered songs and exposes a method to print the playlist to the console. | Unit Testing |
+| `PlaylistController.java` | Acts as the MVC controller. Coordinates the flow between SongDatabase, FilterEngine, Shuffle, and Playlist. | Use Case Testing, State Transition Testing |
+| `Shuffle.java` | Shuffles the filtered song list using a seeded random algorithm to ensure deterministic, repeatable output. | Boundary Value Analysis, Equivalence Class Testing |
+| `CLIView.java` | Handles all user input and output via the command line. Collects user preferences and passes them to the controller. | Decision Table Testing, Use Case Testing |
+
+The interaction between all components follows a strict unidirectional flow, 
+as illustrated in Fig. 1 below. The user provides input through the CLIView, 
+which delegates to the PlaylistController. The controller loads songs from 
+SongDatabase, applies filters via FilterEngine, shuffles the result using 
+Shuffle, wraps the output in a Playlist object, and returns it to the view 
+for display. No data is persisted at any stage.
+
+![Fig. 1 - Component Block Diagram](docs/block_diagram.png)
+*Fig. 1: Block diagram showing the interaction and data flow between all 
+system components.*
 
 ### 3.3.2	Environmental, Societal, Safety, and Economic Considerations
 Explain how your engineering design took into account environmental, societal, economic and other constraints into consideration. It may include how your design has positive contributions to the environment and society? What type of economic decisions you made? How did you make sure that the design is reliable and safe to use?
@@ -157,8 +182,39 @@ Explain how your engineering design took into account environmental, societal, e
 ### 3.3.3	Test Cases and results
 What test suits did you design to test your prototype? How did you execute the test cases to test the prototype?
 
-### 3.3.4	Limitations
-Every product has some limitations, and so is the case with your design product. Highlight some of the limitations of your solution here.
+### 3.3.4 Limitations
+
+While the final solution successfully meets the defined functional requirements 
+and design constraints, several limitations are acknowledged:
+
+**Static Dataset:** The system relies entirely on a predefined, static `songs.txt` 
+file as its data source. Songs cannot be added, removed, or updated at runtime. 
+This means the quality and variety of generated playlists is directly limited 
+by the size and diversity of the dataset provided.
+
+**No Mood or Tempo Filtering:** The current `Song` model only stores title, 
+artist, genre, and explicit flag. Attributes such as mood, tempo, or release 
+year — which are common playlist criteria — are not supported. Extending the 
+system to include these would require changes to the data model, the database 
+parser, and the filter engine.
+
+**No Persistent Storage:** Playlists are generated and displayed in memory only. 
+There is no functionality to save, export, or retrieve a previously generated 
+playlist. Each run of the application produces a fresh result with no history.
+
+**Command-Line Interface Only:** The application uses a minimal CLI for all 
+user interaction. This limits accessibility for users who are unfamiliar with 
+terminal environments and restricts the ability to present richer playlist 
+information such as album art or audio previews.
+
+**No Duplicate Detection:** If the `songs.txt` file contains duplicate entries, 
+the system will treat them as distinct songs and may include duplicates in a 
+generated playlist. No deduplication logic is currently implemented.
+
+**Limited Scalability:** The system loads and filters the entire song list into 
+memory on every playlist generation. For very large datasets this approach 
+would become inefficient, as no indexing, caching, or lazy-loading strategy 
+is employed.
 
 
 
