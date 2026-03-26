@@ -91,35 +91,32 @@ To achieve these objectives, the project will:
 
 ## 3.0 Solution
 In this section, you will provide an account of some solutions your team brainstormed to implement and test the project. Some solutions might not have all the desired features, some might not satisfy the constraints, or both. These solutions come up in your mind while you brainstorm ways of implementing all the features while meeting the constraints. Towards, the end you select a solution that you think has all the features, testable and satisfies all the constraints. Remember that an engineering design is iterative in nature! 
-### 3.1	Solution 1: Dynamic Web App with External APIs
+### 3.1	Solution 1: GUI Based Playlist Generator with External APIs
 #### Description:
-This solution proposed a web-based application featuring a dynamic user interface. Instead of using a static local dataset, this version would utilize external APIs for retrieving song data and leverage a generative AI model (OpenAI) to create the playlists. The goal was to create a highly engaging user experience with a modern feature set.
-
+The first proposed solution was a graphical user interface (GUI)-based application that integrates with external music APIs (like Spotify). Users would input preferences through a visual interface, and the system would fetch real-time song data, filter it, and generate playlists dynamically.
 #### Pros:
 
-- Engaging UI: Offers a highly interactive and modern user experience.
+- User-friendly and visually appealing interface
 
-- Feature-Rich: Supports advanced capabilities like natural language processing and complex filtering.
+- Access to large, real-time music libraries
 
 - Data Variety: External APIs provide access to a massive, continuously updated music library.
 
 #### Cons:
 
 - High Testing Complexity: Requires extensive mocking for APIs and complex UI automation.
-
+  
+- Dependency on external services, leading to unreliable test results
+  
 - Low Repeatability: AI generation is non-deterministic, making output unpredictable.
-
+  
 - Long Development Time: Backend and frontend setup consumes time meant for testing.
-
+  
 - High Learning Curve: Requires extensive knowledge outside the core course scope.
 
 #### Reason for not selecting this solution (Testing Perspective):
 
-- Lack of Deterministic Outputs: AI models are unpredictable, meaning identical inputs won't consistently produce the exact same playlist. This prevents the creation of reliable, repeatable test cases.
-
-- Excessive Testing Overhead: Testing dynamic web interfaces and external APIs requires complex mocking and UI automation. This introduces unnecessary complexity and potential points of failure outside of our own code.
-
-- Misalignment with Core Objectives: The significant time required to build web infrastructure and integrate APIs takes direct focus away from our primary requirement: designing optimal test suites
+This approach violates the core project objective of deterministic and testable logic. Because API responses and UI interactions are unpredictable, it becomes difficult to perform repeatable automated tests, making it unsuitable for TDD and rigorous verification. The high complexity also makes the development time quite long
 ### 3.2	Solution 2: Simplified Web App with Local Database
 #### Description:
 This solution proposed a simplified web-based application with a minimal graphical interface for collecting user preferences. Instead of external APIs, song data would be stored locally in a MongoDB database. Playlist generation would rely on rule-based scoring logic rather than AI.
