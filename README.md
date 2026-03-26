@@ -97,63 +97,56 @@ The first proposed solution was a graphical user interface (GUI)-based applicati
 #### Pros:
 
 - User-friendly and visually appealing interface
-
 - Access to large, real-time music libraries
-
 - Data Variety: External APIs provide access to a massive, continuously updated music library.
 
 #### Cons:
 
 - High Testing Complexity: Requires extensive mocking for APIs and complex UI automation.
-  
 - Dependency on external services, leading to unreliable test results
-  
 - Low Repeatability: AI generation is non-deterministic, making output unpredictable.
-  
 - Long Development Time: Backend and frontend setup consumes time meant for testing.
-  
 - High Learning Curve: Requires extensive knowledge outside the core course scope.
 
 #### Reason for not selecting this solution (Testing Perspective):
 
 This approach violates the core project objective of deterministic and testable logic. Because API responses and UI interactions are unpredictable, it becomes difficult to perform repeatable automated tests, making it unsuitable for TDD and rigorous verification. The high complexity also makes the development time quite long
-### 3.2	Solution 2: Simplified Web App with Local Database
+
+### 3.2	Solution 2: GUI-Based System with Local Database
 #### Description:
-This solution proposed a simplified web-based application with a minimal graphical interface for collecting user preferences. Instead of external APIs, song data would be stored locally in a MongoDB database. Playlist generation would rely on rule-based scoring logic rather than AI.
+The second solution removed external APIs and replaced them with a local datasebase while keeping the GUI. The system would still provide a visual interface but operate on a fixed dataset to improve determinism.
 
 #### Pros
 
-- More Deterministic than Solution 1: Rule-based filtering ensures consistent outputs.
-- No External Dependencies: Local database avoids API mocking.
-- Better Control Over Data: Test datasets can be inserted into MongoDB for validation.
+- More Deterministic than Solution 1 (no API dependancy)
+- Controlled dataset enables consistent results
 - Supports Backend Unit Testing: Filtering logic can be tested independently.
 
 #### Cons
 
-- UI Testing Still Required: Web interface requires UI automation testing (Selenium, etc.).
-- Database Dependency: Tests depend on database setup and teardown.
+- UI Testing Still Required
 - Higher Testing Overhead: Requires integration testing between UI, backend, and database.
-- More Configuration Required: MongoDB setup adds environmental complexity.
+- More Configuration Required: MongoDB or SQLite setup adds complexity.
 
 #### Reason for not selecting this solution: 
+Although this solution improves determinism, it still conflicts with the project’s focus on efficient and comprehensive testing. GUI-based systems make unit testing and path testing harder, reducing the ability to fully validate internal logic.
 
-- Database coupling complicates unit testing (requires mock databases or test containers).
-- Web UI still distracts from core testing goals.
-- Environment setup affects repeatability (database state must be reset before tests).
+### 3.3	Final Solution - CLI Based System with Local Dataset
 
-### 3.3	Final Solution
-The final solution is a command-line based, rule-driven playlist generator that uses a structured text file as a lightweight database. The system collects user preferences (ex: genre, mood, explicity/non-explicit, playlist size) through command-line prompts, filters songs from the database based on those criteria, and generates a playlist automatically. The final playlist is shuffled using a seed-based randomizer to simulate randomness while maintaining repeatability for testing.
+The final solution is a command-line based, rule-driven playlist generator that uses a csv file as a lightweight database. The system collects user preferences (ex: genre, explicity/non-explicit, playlist size) through command-line prompts, filters songs from the database based on those criteria, and generates a playlist automatically. The final playlist is shuffled using a seed-based randomizer to simulate randomness while maintaining repeatability for testing.
 
 This design deliberately narrows the project scope compared to earlier solutions. It removes graphical interfaces and external API integrations in order to prioritize determinism, modularity, and testability. The system is divided into clear components like input handling, filtering logic, etc. This allows sach component to be tested independently
 
-### 3.1 Solution 1
-Write a brief description of your first solution and provide the reasons in terms of testing for not selecting this one.
+| Criteria              | Solution 1 (API + GUI) | Solution 2 (GUI + Local DB) | Final Solution (CLI + CSV) |
+| --------------------- | ---------------------- | --------------------------- | -------------------------- |
+| Determinism           | Low                    | Medium                      | High                       |
+| Testability           | Poor                   | Moderate                    | Excellent                  |
+| TDD Support           | Difficult              | Limited                     | Fully supported            |
+| External Dependencies | Yes                    | No                          | No                         |
+| Development Time      | High                   | Medium                      | Low                        |
+| Complexity            | High                   | Medium                      | Low                        |
+| Requirement Alignment | Weak                   | Partial                     | Strong                     |
 
-### 3.2 Solution 2
-This is an improved solution but might not be the final solution that you select. Give a brief description of this solution here. Again focus on its testing attributes.
-
-### 3.3 Final Solution
-This is the final solution. **Explain why it is better than other solutions (focus more on testing)**. You may use a table for comparison purposes. After providing the reason for selecting this solution, detail it below.
 
 ### 3.3.1	Components
 What components you used in the solution? What is the main purpose of using individual component? What testing method did you employ for each component? Provide a block diagram (with a numbered caption, such as Fig. 1) representing the connectivity and interaction between all the components.
