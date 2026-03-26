@@ -133,7 +133,7 @@ Although this solution improves determinism, it still conflicts with the project
 
 ### 3.3	Final Solution - CLI Based System with Local Dataset
 
-The final solution is a command-line based, rule-driven playlist generator that uses a csv file as a lightweight database. The system collects user preferences (ex: genre, explicity/non-explicit, playlist size) through command-line prompts, filters songs from the database based on those criteria, and generates a playlist automatically. The final playlist is shuffled using a seed-based randomizer to simulate randomness while maintaining repeatability for testing.
+The final solution is a command-line based, rule-driven playlist generator that uses a CSV file as a lightweight database. The system collects user preferences (ex: genre, explicitly/non-explicit, playlist size) through command-line prompts, filters songs from the database based on those criteria, and generates a playlist automatically. The final playlist is shuffled using a seed-based randomizer to simulate randomness while maintaining repeatability for testing.
 
 This design deliberately narrows the project scope compared to earlier solutions. It removes graphical interfaces and external API integrations in order to prioritize determinism, modularity, and testability. The system is divided into clear components like input handling, filtering logic, etc. This allows sach component to be tested independently
 
@@ -168,13 +168,59 @@ project's Test-Driven Development approach.
 The interaction between all components follows a strict unidirectional flow, 
 as illustrated in Fig. 1 below. The user provides input through the CLIView, 
 which delegates to the PlaylistController. The controller loads songs from 
-SongDatabase, applies filters via FilterEngine, shuffles the result using 
-Shuffle, wraps the output in a Playlist object, and returns it to the view 
+SongDatabase applies filters via FilterEngine, shuffles the result using 
+Shuffle wraps the output in a Playlist object and returns it to the view 
 for display. No data is persisted at any stage.
 
-![Fig. 1 - Component Block Diagram](docs/block_diagram.png)
-*Fig. 1: Block diagram showing the interaction and data flow between all 
-system components.*
+### Component Interaction Diagram
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        CLIView.java                         │
+│                  Collects user preferences                  │
+└───────────────────────────┬─────────────────────────────────┘
+                            │ genre, allowExplicit, maxSongs
+                            ▼
+┌─────────────────────────────────────────────────────────────┐
+│                  PlaylistController.java                    │
+│               Coordinates the full pipeline                 │
+└──────┬──────────────────┬──────────────────────────┬────────┘
+       │                  │                          │
+       ▼                  ▼                          │
+┌─────────────┐   ┌───────────────┐                 │
+│SongDatabase │   │ FilterEngine  │                 │
+│  .java      │──▶│    .java      │                 │
+│ Loads songs │   │ Filters songs │                 │
+│  from file  │   │ by criteria   │                 │
+└─────────────┘   └──────┬────────┘                 │
+       │                  │                          │
+       │           filtered List<Song>               │
+       │                  ▼                          │
+       │         ┌────────────────┐                  │
+       │         │  Shuffle.java  │                  │
+       │         │ Reorders songs │                  │
+       │         │  (seeded RNG)  │                  │
+       │         └──────┬─────────┘                  │
+       │                │                            │
+       │         shuffled List<Song>                 │
+       │                ▼                            │
+       │         ┌──────────────┐                    │
+       └────────▶│ Playlist.java│                    │
+                 │  Holds final │                    │
+                 │  song list   │                    │
+                 └──────┬───────┘                    │
+                        │                            │
+                        └────────────────────────────┘
+                                    │
+                                    ▼
+                        ┌─────────────────────┐
+                        │     CLIView.java     │
+                        │  printPlaylist()     │
+                        │  displays to the user│
+                        └─────────────────────┘
+
+Fig. 1: Block diagram showing the interaction and data flow
+        between all system components.
+```
 
 ### 3.3.2	Environmental, Societal, Safety, and Economic Considerations
 Explain how your engineering design took into account environmental, societal, economic and other constraints into consideration. It may include how your design has positive contributions to the environment and society? What type of economic decisions you made? How did you make sure that the design is reliable and safe to use?
