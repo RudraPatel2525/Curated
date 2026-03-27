@@ -159,9 +159,8 @@ project's Test-Driven Development approach.
 |---|---|---|
 | `Song.java` | Represents a single song with attributes: title, artist, genre, and explicit flag. Acts as the core data model. | Boundary Value Analysis, Equivalence Class Testing |
 | `SongDatabase.java` | Reads and parses song data from a `.txt` file, returning a list of `Song` objects. Decouples data loading from logic. | Equivalence Class Testing (valid/invalid file input) |
-| `FilterEngine.java` | Filters the full song list based on user criteria: genre, explicit preference, and max playlist size. Implements all rule-based logic. | Boundary Value Analysis, Equivalence Class Testing, Logic/Path Testing |
-| `Playlist.java` | Holds the final ordered list of filtered songs and exposes a method to print the playlist to the console. | Unit Testing |
-| `PlaylistController.java` | Acts as the MVC controller. Coordinates the flow between SongDatabase, FilterEngine, Shuffle, and Playlist. | Use Case Testing, State Transition Testing |
+| `Playlist.java` | Holds the filtered, ordered list of songs. Applies all rule-based filtering logic (genre, explicit preference, max size) and exposes a method to print the playlist. | Boundary Value Analysis, Equivalence Class Testing, Logic/Path Testing |
+| `PlaylistController.java` | Acts as the MVC controller. Coordinates the flow between SongDatabase, Shuffle, and Playlist. | Use Case Testing, State Transition Testing |
 | `Shuffle.java` | Shuffles the filtered song list using a seeded random algorithm to ensure deterministic, repeatable output. | Boundary Value Analysis, Equivalence Class Testing |
 | `CLIView.java` | Handles all user input and output via the command line. Collects user preferences and passes them to the controller. | Decision Table Testing, Use Case Testing |
 
@@ -183,40 +182,35 @@ for display. No data is persisted at any stage.
 ┌─────────────────────────────────────────────────────────────┐
 │                  PlaylistController.java                    │
 │               Coordinates the full pipeline                 │
-└──────┬──────────────────┬──────────────────────────┬────────┘
-       │                  │                          │
-       ▼                  ▼                          │
-┌─────────────┐   ┌───────────────┐                 │
-│SongDatabase │   │ FilterEngine  │                 │
-│  .java      │──▶│    .java      │                 │
-│ Loads songs │   │ Filters songs │                 │
-│  from file  │   │ by criteria   │                 │
-└─────────────┘   └──────┬────────┘                 │
-       │                  │                          │
-       │           filtered List<Song>               │
-       │                  ▼                          │
-       │         ┌────────────────┐                  │
-       │         │  Shuffle.java  │                  │
-       │         │ Reorders songs │                  │
-       │         │  (seeded RNG)  │                  │
-       │         └──────┬─────────┘                  │
-       │                │                            │
-       │         shuffled List<Song>                 │
-       │                ▼                            │
-       │         ┌──────────────┐                    │
-       └────────▶│ Playlist.java│                    │
-                 │  Holds final │                    │
-                 │  song list   │                    │
-                 └──────┬───────┘                    │
-                        │                            │
-                        └────────────────────────────┘
-                                    │
-                                    ▼
-                        ┌─────────────────────┐
-                        │     CLIView.java     │
-                        │  printPlaylist()     │
-                        │  displays to the user│
-                        └─────────────────────┘
+└──────┬──────────────────────────────────────────────────────┘
+       │
+       ▼
+┌─────────────────┐
+│ SongDatabase    │
+│    .java        │
+│  Loads songs    │
+│   from file     │
+└────────┬────────┘
+         │ full List<Song>
+         ▼
+┌─────────────────────────────────────────────────────────────┐
+│                       Playlist.java                         │
+│        Filters songs by genre, explicit, and max size       │
+│              then holds the final song list                 │
+└───────────────────────────┬─────────────────────────────────┘
+                            │ filtered List<Song>
+                            ▼
+                  ┌──────────────────┐
+                  │   Shuffle.java   │
+                  │  Reorders songs  │
+                  │   (seeded RNG)   │
+                  └────────┬─────────┘
+                           │ shuffled List<Song>
+                           ▼
+┌─────────────────────────────────────────────────────────────┐
+│                        CLIView.java                         │
+│                 printPlaylist() → displays to user          │
+└─────────────────────────────────────────────────────────────┘
 
 Fig. 1: Block diagram showing the interaction and data flow
         between all system components.
