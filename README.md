@@ -102,7 +102,7 @@ To achieve these objectives, the project will:
 
 ## 3.0 Solution
 In this section, you will provide an account of some solutions your team brainstormed to implement and test the project. Some solutions might not have all the desired features, some might not satisfy the constraints, or both. These solutions come up in your mind while you brainstorm ways of implementing all the features while meeting the constraints. Towards, the end you select a solution that you think has all the features, testable and satisfies all the constraints. Remember that an engineering design is iterative in nature! 
-### 3.1	Solution 1: GUI Based Playlist Generator with External APIs
+### 3.1 Solution 1: GUI Based Playlist Generator with External APIs
 #### Description:
 The first proposed solution was a graphical user interface (GUI)-based application that integrates with external music APIs (like Spotify). Users would input preferences through a visual interface, and the system would fetch real-time song data, filter it, and generate playlists dynamically.
 #### Pros:
@@ -123,7 +123,7 @@ The first proposed solution was a graphical user interface (GUI)-based applicati
 
 This approach violates the core project objective of deterministic and testable logic. Because API responses and UI interactions are unpredictable, it becomes difficult to perform repeatable automated tests, making it unsuitable for TDD and rigorous verification. The high complexity also makes the development time quite long
 
-### 3.2	Solution 2: GUI-Based System with Local Database
+### 3.2 Solution 2: GUI-Based System with Local Database
 #### Description:
 The second solution removed external APIs and replaced them with a local datasebase while keeping the GUI. The system would still provide a visual interface but operate on a fixed dataset to improve determinism.
 
@@ -142,7 +142,7 @@ The second solution removed external APIs and replaced them with a local dataseb
 #### Reason for not selecting this solution: 
 Although this solution improves determinism, it still conflicts with the project’s focus on efficient and comprehensive testing. GUI-based systems make unit testing and path testing harder, reducing the ability to fully validate internal logic.
 
-### 3.3	Final Solution - CLI Based System with Local Dataset
+### 3.3 Final Solution - CLI Based System with Local Dataset
 
 The final solution is a command-line based, rule-driven playlist generator that uses a CSV file as a lightweight database. The system collects user preferences (ex: genre, explicitly/non-explicit, playlist size) through command-line prompts, filters songs from the database based on those criteria, and generates a playlist automatically. The final playlist is shuffled using a seed-based randomizer to simulate randomness while maintaining repeatability for testing.
 
