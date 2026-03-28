@@ -183,49 +183,7 @@ Shuffle wraps the output in a Playlist object and returns it to the view
 for display. No data is persisted at any stage.
 
 ### Component Interaction Diagram
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        CLIView.java                         │
-│                  Collects user preferences                  │
-└───────────────────────────┬─────────────────────────────────┘
-                            │ genre, allowExplicit, maxSongs
-                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  PlaylistController.java                    │
-│               Coordinates the full pipeline                 │
-└──────┬──────────────────────────────────────────────────────┘
-       │
-       ▼
-┌─────────────────┐
-│ SongDatabase    │
-│    .java        │
-│  Loads songs    │
-│   from file     │
-└────────┬────────┘
-         │ full List<Song>
-         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                       Playlist.java                         │
-│        Filters songs by genre, explicit, and max size       │
-│              then holds the final song list                 │
-└───────────────────────────┬─────────────────────────────────┘
-                            │ filtered List<Song>
-                            ▼
-                  ┌──────────────────┐
-                  │   Shuffle.java   │
-                  │  Reorders songs  │
-                  │   (seeded RNG)   │
-                  └────────┬─────────┘
-                           │ shuffled List<Song>
-                           ▼
-┌─────────────────────────────────────────────────────────────┐
-│                        CLIView.java                         │
-│                 printPlaylist() → displays to user          │
-└─────────────────────────────────────────────────────────────┘
-
-Fig. 1: Block diagram showing the interaction and data flow
-        between all system components.
-```
+![Curated Playlist Generator Block Diagram](https://github.com/RudraPatel2525/Curated/blob/main/Diagrams/block_diagram1.svg)
 
 ### 3.3.2 Environmental, Societal, Safety, and Economic Considerations
 #### Environmental Considerations
