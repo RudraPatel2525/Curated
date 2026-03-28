@@ -25,6 +25,7 @@
     - [4.3 Meeting 3](#42-meeting-3)
     - [4.4 Meeting 4](#42-meeting-4)
     - [4.5 Meeting 5](#42-meeting-5)
+    - [4.6 Meeting 6](#42-meeting-6)
 
 
 ---
@@ -356,7 +357,7 @@ Agenda: Discuss different design processes, trade-offs, complexity, and testabil
 
 
 
-### 4.4 Meeting 5
+### 4.5 Meeting 5
 
 Time: Feb 17, 2026, 11:40 am to 1:00 pm
 Agenda: Set up Maven and assign roles.
