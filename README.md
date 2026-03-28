@@ -227,7 +227,7 @@ Fig. 1: Block diagram showing the interaction and data flow
         between all system components.
 ```
 
-### 3.3.2	Environmental, Societal, Safety, and Economic Considerations
+### 3.3.2 Environmental, Societal, Safety, and Economic Considerations
 #### Environmental Considerations
 The application is entirely software-based and requires no physical hardware beyond a standard personal computer. It operates on a static local dataset, eliminating the need for network requests or cloud infrastructure, which reduces energy consumption compared to API-dependent alternatives. No data is written to disk during runtime, minimizing unnecessary storage usage.
 
@@ -240,7 +240,7 @@ The system is built on deterministic, rule-based logic. Given identical inputs, 
 #### Economic Considerations
 The application was developed entirely using open-source tools and libraries, incurring no licensing or API costs. The Java-based implementation runs on any standard machine without requiring paid hosting, cloud services, or external subscriptions. This makes the solution fully reproducible by any team member or evaluator at no cost.
 
-### 3.3.3	Test Cases and results
+### 3.3.3 Test Cases and Results
 #### Solution Evaluation
 Prior to finalizing the design, the team evaluated three candidate solutions against the project's defined functions, objectives, and constraints. The table below summarizes the comparison:
 
