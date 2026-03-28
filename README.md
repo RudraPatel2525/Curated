@@ -258,7 +258,7 @@ The final CLI-based solution was the only candidate to satisfy all defined funct
 
 #### Use Case UML
 To ensure the final solution met all required system functions, the team developed a Use Case UML diagram as a testing measure. Each use case was mapped directly to one or more test cases, forming the basis of the traceability matrix between system requirements and test coverage.
-
+![image alt](https://github.com/RudraPatel2525/Curated/blob/6d86bff820871a241c8f345c9f69a14e50a09e5a/Diagrams/Curated%20Use%20Case%20Diagram.png)
 
 #### Test Suites
 Four test suites were designed and executed to validate the prototype:
