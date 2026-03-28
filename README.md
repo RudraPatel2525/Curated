@@ -22,6 +22,9 @@
 4. [Team Work](#40-team-work)
     - [4.1 Meeting 1](#41-meeting-1)
     - [4.2 Meeting 2](#42-meeting-2)
+    - [4.3 Meeting 3](#42-meeting-3)
+    - [4.4 Meeting 4](#42-meeting-4)
+    - [4.5 Meeting 5](#42-meeting-5)
 
 
 ---
@@ -340,7 +343,7 @@ Agenda: Discuss application function, requirements, objectives, constraints, and
 | Youssef | Meet and discuss application function, objectives, and constraints | Done | Finish Section 2.2.3 Constraints|
 
 
-### 4.3 Meeting 4
+### 4.4 Meeting 4
 
 Time: Feb 5, 2026, 11:40 am to 1:00 pm
 Agenda: Discuss different design processes, trade-offs, complexity, and testability for each solution. 
@@ -353,7 +356,7 @@ Agenda: Discuss different design processes, trade-offs, complexity, and testabil
 
 
 
-### 4.3 Meeting 5
+### 4.4 Meeting 5
 
 Time: Feb 17, 2026, 11:40 am to 1:00 pm
 Agenda: Set up Maven and assign roles.
@@ -365,7 +368,7 @@ Agenda: Set up Maven and assign roles.
 | Youssef | Finish Section 3.3.1 Solution 1 | Done | Finish FilterEngineTest.java (Boundary, Equivalence, and Filtering logic)  |
 
 
-### 4.4 Meeting 5
+### 4.6 Meeting 6
 
 Time: Mar 11, 2026, 9:40 pm to 10:35 pm
 Agenda: Touchbase.
