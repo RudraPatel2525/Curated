@@ -217,20 +217,20 @@ Fig. 1: Block diagram showing the interaction and data flow
 ```
 
 ### 3.3.2	Environmental, Societal, Safety, and Economic Considerations
-## Environmental Considerations
+#### Environmental Considerations
 The application is entirely software-based and requires no physical hardware beyond a standard personal computer. It operates on a static local dataset, eliminating the need for network requests or cloud infrastructure, which reduces energy consumption compared to API-dependent alternatives. No data is written to disk during runtime, minimizing unnecessary storage usage.
 
-## Societal Considerations
+#### Societal Considerations
 The playlist generator was designed to be inclusive and neutral. Genre and explicit content filters are applied strictly based on user-defined input, with no assumptions made about the user's demographics, background, or preferences. The explicit content filter ensures the application can be used safely in environments with minors or in contexts where content restrictions are required. No personally identifiable information (PII) such as names, emails, or listening history is collected or stored at any point.
 
-## Safety and Reliability
+#### Safety and Reliability
 The system is built on deterministic, rule-based logic. Given identical inputs, the application will always produce identical outputs, ensuring predictable and verifiable behaviour. Input validation is handled at the filter level, and edge cases such as empty datasets or no matching songs are explicitly handled with informative output rather than silent failures or crashes. The use of a seeded random algorithm in the shuffle component ensures that randomness is controlled and repeatable for testing purposes.
 
-## Economic Considerations
+#### Economic Considerations
 The application was developed entirely using open-source tools and libraries, incurring no licensing or API costs. The Java-based implementation runs on any standard machine without requiring paid hosting, cloud services, or external subscriptions. This makes the solution fully reproducible by any team member or evaluator at no cost.
 
 ### 3.3.3	Test Cases and results
-## Solution Evaluation
+#### Solution Evaluation
 Prior to finalizing the design, the team evaluated three candidate solutions against the project's defined functions, objectives, and constraints. The table below summarizes the comparison:
 
 | Criteria | Solution 1 (Web + AI) | Solution 2 (Web + DB) | Final Solution (CLI) |
@@ -245,11 +245,11 @@ Prior to finalizing the design, the team evaluated three candidate solutions aga
 
 The final CLI-based solution was the only candidate to satisfy all defined functions, objectives, and constraints simultaneously, and was the only solution that fully supported Test-Driven Development without requiring external mocking frameworks or infrastructure setup.
 
-## Use Case UML
+#### Use Case UML
 To ensure the final solution met all required system functions, the team developed a Use Case UML diagram as a testing measure. Each use case was mapped directly to one or more test cases, forming the basis of the traceability matrix between system requirements and test coverage.
 
 
-## Test Suites
+#### Test Suites
 Four test suites were designed and executed to validate the prototype:
 
 | Test Suite | File | Methods Covered | Testing Techniques |
