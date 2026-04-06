@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="controller.PlaylistControllerTest" time="0.045" tests="9" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="controller.PlaylistControllerTest" time="0.041" tests="9" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="user.country" value="CA"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/Users/okeezy/Desktop/oracleJdk-25.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/okeezy/Desktop/ENSE375/Project/Curated/target/surefire/surefirebooter-20260325085000638_3.jar /Users/okeezy/Desktop/ENSE375/Project/Curated/target/surefire 2026-03-25T08-50-00_579-jvmRun1 surefire-20260325085000638_1tmp surefire_0-20260325085000638_2tmp"/>
+    <property name="sun.java.command" value="/Users/okeezy/Desktop/ENSE375/Project/Curated/target/surefire/surefirebooter-20260404214039791_3.jar /Users/okeezy/Desktop/ENSE375/Project/Curated/target/surefire 2026-04-04T21-40-39_720-jvmRun1 surefire-20260404214039791_1tmp surefire_0-20260404214039791_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/okeezy/Desktop/ENSE375/Project/Curated/target/test-classes:/Users/okeezy/Desktop/ENSE375/Project/Curated/target/classes:/Users/okeezy/.m2/repository/org/openjfx/javafx-controls/17.0.10/javafx-controls-17.0.10.jar:/Users/okeezy/.m2/repository/org/openjfx/javafx-controls/17.0.10/javafx-controls-17.0.10-mac-aarch64.jar:/Users/okeezy/.m2/repository/org/openjfx/javafx-graphics/17.0.10/javafx-graphics-17.0.10.jar:/Users/okeezy/.m2/repository/org/openjfx/javafx-graphics/17.0.10/javafx-graphics-17.0.10-mac-aarch64.jar:/Users/okeezy/.m2/repository/org/openjfx/javafx-base/17.0.10/javafx-base-17.0.10.jar:/Users/okeezy/.m2/repository/org/openjfx/javafx-base/17.0.10/javafx-base-17.0.10-mac-aarch64.jar:/Users/okeezy/.m2/repository/org/openjfx/javafx-fxml/17.0.10/javafx-fxml-17.0.10.jar:/Users/okeezy/.m2/repository/org/openjfx/javafx-fxml/17.0.10/javafx-fxml-17.0.10-mac-aarch64.jar:/Users/okeezy/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/Users/okeezy/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/okeezy/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/Users/okeezy/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/okeezy/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/Users/okeezy/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -28,7 +28,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/okeezy/Desktop/ENSE375/Project/Curated/target/surefire/surefirebooter-20260325085000638_3.jar"/>
+    <property name="surefire.real.class.path" value="/Users/okeezy/Desktop/ENSE375/Project/Curated/target/surefire/surefirebooter-20260404214039791_3.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25.0.2+10-LTS-69"/>
     <property name="user.name" value="okeezy"/>
@@ -56,17 +56,14 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="testGeneratePlaylist_returnsPlaylist_whenMatchesExist" classname="controller.PlaylistControllerTest" time="0.022"/>
-  <testcase name="testExplicitNotAllowed_filtersExplicitSongs" classname="controller.PlaylistControllerTest" time="0.001"/>
-  <testcase name="testExplicitAllowed_includesExplicitSongs" classname="controller.PlaylistControllerTest" time="0.001"/>
+  <testcase name="testGeneratePlaylist_returnsPlaylist_whenMatchesExist" classname="controller.PlaylistControllerTest" time="0.016"/>
+  <testcase name="testExplicitNotAllowed_filtersExplicitSongs" classname="controller.PlaylistControllerTest" time="0.002"/>
+  <testcase name="testExplicitAllowed_includesExplicitSongs" classname="controller.PlaylistControllerTest" time="0.003"/>
   <testcase name="testGeneratePlaylist_filtersByGenre" classname="controller.PlaylistControllerTest" time="0.002"/>
   <testcase name="testReset_clearsPlaylist" classname="controller.PlaylistControllerTest" time="0.001"/>
-  <testcase name="testGenerateTwice_overwritesPrevious" classname="controller.PlaylistControllerTest" time="0.001">
-    <system-out><![CDATA[No songs found matching criteria.
-]]></system-out>
-  </testcase>
-  <testcase name="testInitialState_noPlaylistExists" classname="controller.PlaylistControllerTest" time="0.0"/>
-  <testcase name="testNoMatch_returnsNull" classname="controller.PlaylistControllerTest" time="0.0">
+  <testcase name="testGenerateTwice_overwritesPrevious" classname="controller.PlaylistControllerTest" time="0.001"/>
+  <testcase name="testInitialState_noPlaylistExists" classname="controller.PlaylistControllerTest" time="0.002"/>
+  <testcase name="testNoMatch_returnsNull" classname="controller.PlaylistControllerTest" time="0.002">
     <system-out><![CDATA[No songs found matching criteria.
 ]]></system-out>
   </testcase>

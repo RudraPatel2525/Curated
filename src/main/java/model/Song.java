@@ -21,7 +21,7 @@ public class Song {
     }
 
     // getters for song attributes
-    public String getTitle() { 
+    public String getTitle() {
         return title;
     }
 

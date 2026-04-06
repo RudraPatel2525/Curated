@@ -1,4 +1,207 @@
 title,artist,genre,explicit
-Blinding Lights,The Weeknd,Pop,false
-HUMBLE.,Kendrick Lamar,Hip-Hop,true
 Levitating,Dua Lipa,Pop,false
+Blinding Lights,The Weeknd,Pop,false
+Bad Guy,Billie Eilish,Pop,true
+Shape of You,Ed Sheeran,Pop,false
+Stay,The Kid LAROI,Pop,true
+Peaches,Justin Bieber,Pop,false
+Senorita,Shawn Mendes,Pop,false
+As It Was,Harry Styles,Pop,false
+Watermelon Sugar,Harry Styles,Pop,false
+Anti-Hero,Taylor Swift,Pop,false
+Perfect,Ed Sheeran,Pop,false
+Shivers,Ed Sheeran,Pop,false
+Memories,Maroon 5,Pop,false
+Sugar,Maroon 5,Pop,false
+Girls Like You,Maroon 5,Pop,false
+Happier,Marshmello,Pop,false
+Sunflower,Post Malone,Pop,false
+Circles,Post Malone,Pop,false
+Intentions,Justin Bieber,Pop,false
+Sorry,Justin Bieber,Pop,false
+What Do You Mean,Justin Bieber,Pop,false
+Bad Habits,Ed Sheeran,Pop,false
+Photograph,Ed Sheeran,Pop,false
+Castle on the Hill,Ed Sheeran,Pop,false
+Call Out My Name,The Weeknd,Pop,false
+Save Your Tears,The Weeknd,Pop,false
+Rolling in the Deep,Adele,Pop,false
+Hello,Adele,Pop,false
+Someone Like You,Adele,Pop,false
+Set Fire to the Rain,Adele,Pop,false
+Halo,Beyonce,Pop,false
+Crazy in Love,Beyonce,Pop,false
+Single Ladies,Beyonce,Pop,false
+Irreplaceable,Beyonce,Pop,false
+Poker Face,Lady Gaga,Pop,false
+Bad Romance,Lady Gaga,Pop,false
+Just Dance,Lady Gaga,Pop,false
+Shallow,Lady Gaga,Pop,false
+Firework,Katy Perry,Pop,false
+Roar,Katy Perry,Pop,false
+Teenage Dream,Katy Perry,Pop,false
+Dark Horse,Katy Perry,Pop,false
+California Gurls,Katy Perry,Pop,false
+HUMBLE.,Kendrick Lamar,Hip-Hop,true
+DNA.,Kendrick Lamar,Hip-Hop,true
+Alright,Kendrick Lamar,Hip-Hop,true
+God's Plan,Drake,Hip-Hop,true
+In My Feelings,Drake,Hip-Hop,true
+Started From The Bottom,Drake,Hip-Hop,true
+SICKO MODE,Travis Scott,Hip-Hop,true
+Goosebumps,Travis Scott,Hip-Hop,true
+Highest in the Room,Travis Scott,Hip-Hop,true
+Lose Yourself,Eminem,Hip-Hop,true
+Without Me,Eminem,Hip-Hop,true
+Not Afraid,Eminem,Hip-Hop,true
+Lucid Dreams,Juice WRLD,Hip-Hop,true
+All Girls Are The Same,Juice WRLD,Hip-Hop,true
+Robbery,Juice WRLD,Hip-Hop,true
+XO TOUR Llif3,Lil Uzi Vert,Hip-Hop,true
+Money Longer,Lil Uzi Vert,Hip-Hop,true
+Mask Off,Future,Hip-Hop,true
+Life Is Good,Future,Hip-Hop,true
+Rockstar,DaBaby,Hip-Hop,true
+Suge,DaBaby,Hip-Hop,true
+Power,Kanye West,Hip-Hop,false
+Stronger,Kanye West,Hip-Hop,false
+Gold Digger,Kanye West,Hip-Hop,true
+Industry Baby,Lil Nas X,Hip-Hop,true
+Montero,Lil Nas X,Hip-Hop,true
+Old Town Road,Lil Nas X,Hip-Hop,false
+Eye of the Tiger,Survivor,Rock,false
+Bohemian Rhapsody,Queen,Rock,false
+We Will Rock You,Queen,Rock,false
+We Are The Champions,Queen,Rock,false
+Hotel California,Eagles,Rock,false
+Take It Easy,Eagles,Rock,false
+Smells Like Teen Spirit,Nirvana,Rock,true
+Come As You Are,Nirvana,Rock,true
+Lithium,Nirvana,Rock,true
+Back in Black,ACDC,Rock,false
+Thunderstruck,ACDC,Rock,false
+Highway to Hell,ACDC,Rock,false
+Sweet Child O Mine,Guns N Roses,Rock,false
+Welcome to the Jungle,Guns N Roses,Rock,false
+November Rain,Guns N Roses,Rock,false
+Livin on a Prayer,Bon Jovi,Rock,false
+You Give Love a Bad Name,Bon Jovi,Rock,false
+It's My Life,Bon Jovi,Rock,false
+Dream On,Aerosmith,Rock,false
+Walk This Way,Aerosmith,Rock,false
+Crazy,Aerosmith,Rock,false
+Take Five,Dave Brubeck,Jazz,false
+So What,Miles Davis,Jazz,false
+Blue in Green,Miles Davis,Jazz,false
+Freddie Freeloader,Miles Davis,Jazz,false
+My Favorite Things,John Coltrane,Jazz,false
+Giant Steps,John Coltrane,Jazz,false
+Naima,John Coltrane,Jazz,false
+Sing Sing Sing,Benny Goodman,Jazz,false
+Feeling Good,Nina Simone,Jazz,false
+Fly Me to the Moon,Frank Sinatra,Jazz,false
+The Way You Look Tonight,Frank Sinatra,Jazz,false
+At Last,Etta James,Jazz,false
+Autumn Leaves,Bill Evans,Jazz,false
+Waltz for Debby,Bill Evans,Jazz,false
+Round Midnight,Thelonious Monk,Jazz,false
+Levels,Avicii,EDM,false
+Wake Me Up,Avicii,EDM,false
+Fade Into Darkness,Avicii,EDM,false
+Titanium,David Guetta,EDM,false
+Without You,David Guetta,EDM,false
+When Love Takes Over,David Guetta,EDM,false
+Animals,Martin Garrix,EDM,false
+Forbidden Voices,Martin Garrix,EDM,false
+Clarity,Zedd,EDM,false
+Stay the Night,Zedd,EDM,false
+Lean On,Major Lazer,EDM,false
+Cold Water,Major Lazer,EDM,false
+Faded,Alan Walker,EDM,false
+Alone,Alan Walker,EDM,false
+Don't You Worry Child,Swedish House Mafia,EDM,false
+Greyhound,Swedish House Mafia,EDM,false
+Scary Monsters,Skrillex,EDM,false
+Bangarang,Skrillex,EDM,false
+Summer,Calvin Harris,EDM,false
+I'm Not Alone,Calvin Harris,EDM,false
+Song121,Artist121,Pop,false
+Song122,Artist122,Pop,true
+Song123,Artist123,Hip-Hop,true
+Song124,Artist124,Hip-Hop,false
+Song125,Artist125,Rock,false
+Song126,Artist126,Rock,true
+Song127,Artist127,Jazz,false
+Song128,Artist128,Jazz,false
+Song129,Artist129,EDM,false
+Song130,Artist130,EDM,true
+Song131,Artist131,Pop,false
+Song132,Artist132,Pop,false
+Song133,Artist133,Hip-Hop,true
+Song134,Artist134,Hip-Hop,true
+Song135,Artist135,Rock,false
+Song136,Artist136,Rock,false
+Song137,Artist137,Jazz,false
+Song138,Artist138,Jazz,false
+Song139,Artist139,EDM,false
+Song140,Artist140,EDM,false
+Song141,Artist141,Pop,false
+Song142,Artist142,Pop,true
+Song143,Artist143,Hip-Hop,true
+Song144,Artist144,Hip-Hop,false
+Song145,Artist145,Rock,false
+Song146,Artist146,Rock,true
+Song147,Artist147,Jazz,false
+Song148,Artist148,Jazz,false
+Song149,Artist149,EDM,false
+Song150,Artist150,EDM,true
+Song151,Artist151,Pop,false
+Song152,Artist152,Pop,false
+Song153,Artist153,Hip-Hop,true
+Song154,Artist154,Hip-Hop,true
+Song155,Artist155,Rock,false
+Song156,Artist156,Rock,false
+Song157,Artist157,Jazz,false
+Song158,Artist158,Jazz,false
+Song159,Artist159,EDM,false
+Song160,Artist160,EDM,false
+Song161,Artist161,Pop,false
+Song162,Artist162,Pop,true
+Song163,Artist163,Hip-Hop,true
+Song164,Artist164,Hip-Hop,false
+Song165,Artist165,Rock,false
+Song166,Artist166,Rock,true
+Song167,Artist167,Jazz,false
+Song168,Artist168,Jazz,false
+Song169,Artist169,EDM,false
+Song170,Artist170,EDM,true
+Song171,Artist171,Pop,false
+Song172,Artist172,Pop,false
+Song173,Artist173,Hip-Hop,true
+Song174,Artist174,Hip-Hop,true
+Song175,Artist175,Rock,false
+Song176,Artist176,Rock,false
+Song177,Artist177,Jazz,false
+Song178,Artist178,Jazz,false
+Song179,Artist179,EDM,false
+Song180,Artist180,EDM,false
+Song181,Artist181,Pop,false
+Song182,Artist182,Pop,true
+Song183,Artist183,Hip-Hop,true
+Song184,Artist184,Hip-Hop,false
+Song185,Artist185,Rock,false
+Song186,Artist186,Rock,true
+Song187,Artist187,Jazz,false
+Song188,Artist188,Jazz,false
+Song189,Artist189,EDM,false
+Song190,Artist190,EDM,true
+Song191,Artist191,Pop,false
+Song192,Artist192,Pop,false
+Song193,Artist193,Hip-Hop,true
+Song194,Artist194,Hip-Hop,true
+Song195,Artist195,Rock,false
+Song196,Artist196,Rock,false
+Song197,Artist197,Jazz,false
+Song198,Artist198,Jazz,false
+Song199,Artist199,EDM,false
+Song200,Artist200,EDM,false

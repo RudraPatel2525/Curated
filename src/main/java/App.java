@@ -7,7 +7,7 @@ public class App {
 
         try {
             // load songs from csv
-            SongDatabase db = new SongDatabase("songs.csv");
+            SongDatabase db = new SongDatabase("src/main/resources/songs.csv");
 
             // Create controller (handles business logic)
             PlaylistController controller = new PlaylistController(db);

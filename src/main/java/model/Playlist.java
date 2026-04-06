@@ -23,6 +23,13 @@ public class Playlist {
     /**
      * Constructor performs filtering
      */
+
+    private String normalize(String input) {
+        if (input == null) return "";
+
+        return input.toLowerCase().replaceAll("[^a-z0-9]", ""); // removes spaces, hyphens, etc.
+    }
+    
     public Playlist(String name,
                     List<Song> allSongs,
                     String genre,
@@ -34,11 +41,12 @@ public class Playlist {
 
         for (Song song : allSongs) {
 
-            // Genre filter
-            boolean genreMatch =
-                    genre == null ||
-                    genre.equalsIgnoreCase(ANY) ||
-                    song.getGenre().equalsIgnoreCase(genre);
+        // Genre filter
+        // Normalize user input + song genre for flexible matching
+        boolean genreMatch =
+                genre == null ||
+                normalize(genre).equals(normalize(ANY)) ||
+                normalize(song.getGenre()).equals(normalize(genre));
 
             // Explicit filter
             boolean explicitMatch =
@@ -86,4 +94,5 @@ public class Playlist {
 
         return sb.toString();
     }
+    
 }

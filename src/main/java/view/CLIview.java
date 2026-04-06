@@ -16,53 +16,60 @@ public class CLIview {
     }
 
     public void start() {
-        System.out.println("🎵 Curated Playlist Generator 🎵");
+        System.out.println("=== Curated Playlist Generator ===");
 
         boolean running = true;
 
         while (running) {
             System.out.println("\n1. Generate Playlist");
             System.out.println("2. View Playlist");
-            System.out.println("3. Reset");
+            System.out.println("3. Reset Playlist");
             System.out.println("0. Exit");
 
-            int choice = getInt("Choose: ");
+            int choice = getInt("Choose option: ");
 
             switch (choice) {
                 case 1 -> generate();
                 case 2 -> view();
-                case 3 -> controller.reset();
-                case 0 -> running = false;
+                case 3 -> {
+                    controller.reset();
+                    System.out.println("Playlist reset.");
+                }
+                case 0 -> {
+                    running = false;
+                    System.out.println("Goodbye!");
+                }
                 default -> System.out.println("Invalid choice.");
             }
         }
     }
 
     private void generate() {
-        System.out.print("Genre (or ANY): ");
+        System.out.print("Genre (e.g., Pop, Hip-Hop, Rock or ANY): ");
         String genre = scanner.nextLine().trim();
         if (genre.isEmpty()) genre = Playlist.ANY;
 
-        System.out.print("Allow explicit (yes/no): ");
-        boolean explicit = scanner.nextLine().equalsIgnoreCase("yes");
+        System.out.print("Allow explicit? (yes/no): ");
+        boolean allowExplicit = scanner.nextLine().equalsIgnoreCase("yes");
 
-        int max = getInt("Max songs (0 = no limit): ");
-        if (max <= 0) max = Playlist.NO_LIMIT;
+        int maxSongs = getInt("Max songs (0 = no limit): ");
+        if (maxSongs <= 0) maxSongs = Playlist.NO_LIMIT;
 
-        Playlist p = controller.generatePlaylist(genre, explicit, max);
+        Playlist playlist = controller.generatePlaylist(genre, allowExplicit, maxSongs);
 
-        if (p == null) {
-            System.out.println("No songs found.");
+        if (playlist == null || playlist.isEmpty()) {
+            System.out.println("No songs found matching your criteria.");
         } else {
-            System.out.println(p.toDisplayString());
+            System.out.println(playlist.toDisplayString());
         }
     }
 
     private void view() {
         if (!controller.hasPlaylist()) {
-            System.out.println("No playlist yet.");
+            System.out.println("No playlist generated yet.");
             return;
         }
+
         System.out.println(controller.getCurrentPlaylist().toDisplayString());
     }
 
@@ -71,8 +78,8 @@ public class CLIview {
             try {
                 System.out.print(msg);
                 return Integer.parseInt(scanner.nextLine());
-            } catch (Exception e) {
-                System.out.println("Invalid number.");
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid number.");
             }
         }
     }
