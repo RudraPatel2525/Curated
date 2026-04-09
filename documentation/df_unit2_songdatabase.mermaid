@@ -1,0 +1,59 @@
+flowchart TD
+
+    %% ── Unit 2: SongDatabase.java ────────────────────────────────────────
+    %% Traced variable: songs (List<Song>)
+
+    N1(["1
+def(songs)"])
+
+    N2(["2
+def(songs)"])
+
+    N3(["3
+use(songs)"])
+
+    N4(["4
+use(songs)"])
+
+    N1 -->|"init → load
+DEF-1 → DEF-2"| N2
+
+    N2 -->|"Node 2 → Node 3
+getAllSongs()
+tcDB1, tcDB3, tcDB4"| N3
+
+    N2 -->|"Node 2 → Node 4
+size()
+tcDB2"| N4
+
+    N1 -.->|"empty list path
+Node 1,2 → Node 3
+tcDB3"| N3
+
+    %% ── Annotations ──────────────────────────────────────────────────────
+    A1["**Node 1** — Initialize list
+songs = new ArrayList&lt;&gt;()
+DEF-1: def(songs) — empty list"]
+
+    A2["**Node 2** — Load CSV loop
+while(readLine != null)
+blank line → continue
+header → skip
+data row → parseSong()
+songs.add(song)
+DEF-2: def(songs) — populated"]
+
+    A3["**Node 3** — getAllSongs()
+use(songs)
+Returns unmodifiable list
+DU pairs: tcDB1, tcDB3, tcDB4"]
+
+    A4["**Node 4** — size()
+use(songs)
+Returns songs.size()
+DU pairs: tcDB2"]
+
+    N1 -.- A1
+    N2 -.- A2
+    N3 -.- A3
+    N4 -.- A4

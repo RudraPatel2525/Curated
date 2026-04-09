@@ -1,0 +1,46 @@
+flowchart TD
+
+    %% ── Unit 3: Shuffle.java ─────────────────────────────────────────────
+    %% Traced variable: playlist (List<Song> parameter)
+
+    N1(["1
+use(playlist)"])
+
+    N2(["2
+def(playlist)"])
+
+    N3(["3
+use(playlist)"])
+
+    N1 -->|"non-empty path
+caller → shuffle()
+tcSH1, tcSH2"| N2
+
+    N2 -->|"Node 2 → Node 3
+shuffled → return
+tcSH1, tcSH2"| N3
+
+    N1 -.->|"empty list path
+caller → return
+no mutation
+tcSH3"| N3
+
+    %% ── Annotations ──────────────────────────────────────────────────────
+    A1["**Node 1** — shuffle(playlist) called
+use(playlist) — caller provided
+Receives filtered song list
+DU pairs: tcSH1, tcSH2, tcSH3"]
+
+    A2["**Node 2** — Collections.shuffle()
+Collections.shuffle(playlist, random)
+def(playlist) — order mutated in-place
+DU pairs: tcSH1, tcSH2"]
+
+    A3["**Node 3** — return playlist
+use(playlist) — returned to caller
+Empty list returns unchanged
+DU pairs: tcSH1, tcSH2, tcSH3"]
+
+    N1 -.- A1
+    N2 -.- A2
+    N3 -.- A3
