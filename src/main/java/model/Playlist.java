@@ -39,6 +39,8 @@ public class Playlist {
         this.name = name;
         this.songs = new ArrayList<>();
 
+        int effectiveMaxSongs = maxSongs <= 0 ? NO_LIMIT : maxSongs;
+
         for (Song song : allSongs) {
 
         // Genre filter
@@ -57,7 +59,7 @@ public class Playlist {
             }
 
             // Enforce maxSongs
-            if (maxSongs != NO_LIMIT && songs.size() >= maxSongs) {
+            if (effectiveMaxSongs != NO_LIMIT && songs.size() >= effectiveMaxSongs) {
                 break;
             }
         }
