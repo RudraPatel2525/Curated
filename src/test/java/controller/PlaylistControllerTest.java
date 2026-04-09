@@ -23,7 +23,7 @@ import model.SongDatabase;
  *   + Filtering
  *   + Shuffle
  *
- * ⚠️ This is now an INTEGRATION TEST, not a pure unit test.
+ * This is now an INTEGRATION TEST, not a pure unit test.
  */
 public class PlaylistControllerTest {
 
