@@ -45,7 +45,7 @@ public class CLIview {
     }
 
     private void generate() {
-        System.out.print("Genre (e.g., Pop, Hip-Hop, Rock or ANY): ");
+        System.out.print("Genre (EDM, Pop, Hip-Hop, Rock, Jazz): ");
         String genre = scanner.nextLine().trim();
         if (genre.isEmpty()) genre = Playlist.ANY;
 
