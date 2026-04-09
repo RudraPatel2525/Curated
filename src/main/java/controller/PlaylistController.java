@@ -29,6 +29,10 @@ public class PlaylistController {
      */
     public Playlist generatePlaylist(String genre, boolean allowExplicit, int maxSongs) {
 
+        if (maxSongs <= 0) {
+            maxSongs = Playlist.NO_LIMIT;
+        }
+
         List<Song> allSongs = songDatabase.getAllSongs();
         List<Song> filteredSongs = new ArrayList<>();
 
