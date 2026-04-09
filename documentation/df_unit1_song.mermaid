@@ -1,0 +1,55 @@
+flowchart TD
+
+    %% ── Unit 1: Song.java ────────────────────────────────────────────────
+    %% Traced variables: title, artist, genre, explicit
+
+    N1(["1
+def(title, artist,
+genre, explicit)"])
+
+    N2(["2
+use(title, artist)"])
+
+    N3(["3
+use(genre, explicit)"])
+
+    N4(["4
+use(title, artist,
+genre, explicit)"])
+
+    N1 -->|"Node 1 → Node 2
+getTitle(), getArtist()
+tcS1"| N2
+
+    N1 -->|"Node 1 → Node 3
+getGenre(), isExplicit()
+tcS1"| N3
+
+    N1 -->|"Node 1 → Node 4
+toString()
+tcS2"| N4
+
+    %% ── Annotations ──────────────────────────────────────────────────────
+    A1["**Node 1** — Song constructor
+def(title), def(artist),
+def(genre), def(explicit)"]
+
+    A2["**Node 2** — Getter methods
+getTitle() → use(title)
+getArtist() → use(artist)
+DU pairs: tcS1"]
+
+    A3["**Node 3** — Getter methods
+getGenre() → use(genre)
+isExplicit() → use(explicit)
+DU pairs: tcS1"]
+
+    A4["**Node 4** — toString()
+use(title, artist, genre, explicit)
+Conditional branch on explicit
+DU pairs: tcS2"]
+
+    N1 -.- A1
+    N2 -.- A2
+    N3 -.- A3
+    N4 -.- A4

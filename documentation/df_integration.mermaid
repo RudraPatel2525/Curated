@@ -1,0 +1,165 @@
+flowchart TD
+
+    %% ══════════════════════════════════════════════════════════════════════
+    %% INTEGRATION-LEVEL DATA FLOW
+    %% SongDatabase → PlaylistController → Shuffle → Playlist → Controller
+    %% Cross-unit edges use dashed lines (-.->)
+    %% ══════════════════════════════════════════════════════════════════════
+
+    %% ── SongDatabase ─────────────────────────────────────────────────────
+    subgraph DB ["SongDatabase"]
+        direction TB
+        DB1(["1
+def(songs)"])
+        DB2(["2
+def(songs)"])
+        DB3(["3
+use(songs)"])
+
+        DB1 --> DB2
+        DB2 --> DB3
+        DB1 -.-> DB3
+    end
+
+    %% ── PlaylistController ───────────────────────────────────────────────
+    subgraph PC ["PlaylistController"]
+        direction TB
+        PC1(["4
+use(allSongs)"])
+        PC2(["5
+def(filteredSongs)"])
+        PC3(["6
+def(filteredSongs)"])
+        PC4(["7
+def(filteredSongs)"])
+        PC5(["8
+use(filteredSongs)
+→ null"])
+        PC6(["9
+def(filteredSongs)
+→ Shuffle"])
+
+        PC1 --> PC2
+        PC2 --> PC3
+        PC3 --> PC4
+        PC4 -->|"no matches"| PC5
+        PC4 -->|"matches found"| PC6
+    end
+
+    %% ── Shuffle ──────────────────────────────────────────────────────────
+    subgraph SH ["Shuffle"]
+        direction TB
+        SH1(["10
+use(playlist)"])
+        SH2(["11
+def(playlist)"])
+        SH3(["12
+use(playlist)"])
+
+        SH1 --> SH2
+        SH2 --> SH3
+        SH1 -.-> SH3
+    end
+
+    %% ── Playlist ─────────────────────────────────────────────────────────
+    subgraph PL ["Playlist"]
+        direction TB
+        PL1(["13
+use(allSongs)
+def(this.songs)"])
+        PL2(["14
+use(this.songs)"])
+
+        PL1 --> PL2
+    end
+
+    %% ── Result back to controller ─────────────────────────────────────────
+    subgraph RC ["PlaylistController (result)"]
+        direction TB
+        PC7(["15
+use(playlist)
+hasPlaylist = true"])
+    end
+
+    %% ══════════════════════════════════════════════════════════════════════
+    %% CROSS-UNIT DASHED EDGES (semi-solid integration links)
+    %% ══════════════════════════════════════════════════════════════════════
+
+    DB3 -.->|"INT-DF1
+SongDatabase.def(songs)
+→ Controller.use(getAllSongs())
+intDF1"| PC1
+
+    PC6 -.->|"INT-DF2
+Controller.def(filteredSongs)
+→ Shuffle.use(playlist param)
+intDF2"| SH1
+
+    SH3 -.->|"INT-DF3
+Shuffle.def(mutated order)
+→ Playlist.use(allSongs param)
+intDF3"| PL1
+
+    PL2 -.->|"INT-DF4
+Playlist.def(this.songs)
+→ Controller.use(getSongs())
+intDF4"| PC7
+
+    %% ══════════════════════════════════════════════════════════════════════
+    %% NODE ANNOTATIONS
+    %% ══════════════════════════════════════════════════════════════════════
+
+    ADB1["Node 1: songs = new ArrayList&lt;&gt;()
+DEF-1: def(songs) — empty"]
+    ADB2["Node 2: Load CSV + songs.add()
+DEF-2: def(songs) — populated"]
+    ADB3["Node 3: getAllSongs()
+use(songs) — returns list"]
+
+    APC1["Node 4: generatePlaylist() entry
+use(getAllSongs())
+Receives full song list from DB"]
+    APC2["Node 5: Filter by genre
+def(filteredSongs)"]
+    APC3["Node 6: Filter by explicit flag
+def(filteredSongs)"]
+    APC4["Node 7: Apply maxSongs cap
+def(filteredSongs)"]
+    APC5["Node 8: No matches → return null
+hasPlaylist = false"]
+    APC6["Node 9: Pass to Shuffle
+def(filteredSongs) → sent out"]
+
+    ASH1["Node 10: shuffle(playlist) entry
+use(playlist) — from controller"]
+    ASH2["Node 11: Collections.shuffle()
+def(playlist) — mutated in-place"]
+    ASH3["Node 12: return playlist
+use(playlist) — returned"]
+
+    APL1["Node 13: Playlist constructor
+use(allSongs), def(this.songs)
+via internal add loop"]
+    APL2["Node 14: getSongs()
+use(this.songs)
+Returned to controller"]
+
+    APC7["Node 15: getCurrentPlaylist().getSongs()
+use(playlist) — final result
+hasPlaylist = true"]
+
+    DB1 -.- ADB1
+    DB2 -.- ADB2
+    DB3 -.- ADB3
+    PC1 -.- APC1
+    PC2 -.- APC2
+    PC3 -.- APC3
+    PC4 -.- APC4
+    PC5 -.- APC5
+    PC6 -.- APC6
+    SH1 -.- ASH1
+    SH2 -.- ASH2
+    SH3 -.- ASH3
+    PL1 -.- APL1
+    PL2 -.- APL2
+    PC7 -.- APC7
