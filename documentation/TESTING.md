@@ -1,4 +1,4 @@
-# TESTING.md — Curated Playlist Generator (ENSE 375)
+# TESTING.md — Curated 
 
 ---
 
