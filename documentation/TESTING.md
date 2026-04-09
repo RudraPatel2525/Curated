@@ -154,8 +154,6 @@ Use cases are taken directly from the Curated Playlist Generator use case diagra
 | Main flow | Playlist generated | Non-null, non-empty playlist returned | `uc2_mainFlow_viewExistingPlaylist` |
 | Alternative | No playlist generated | hasPlaylist=false, null returned | `uc2_alternativeFlow_noPlaylistToView` |
 
-> **Demo note:** The CLI `toDisplayString()` output for View Playlist is demonstrated verbally during the project demo walkthrough.
-
 ### UC3 — Reset Playlist
 
 | Flow | Precondition | Expected Output | Test Method |
