@@ -1,5 +1,3 @@
-flowchart TD
-
     %% ── Top-level ────────────────────────────────────────────────────────
     IT["**Integration Testing**\nPlaylistControllerTest.java\nTests SongDatabase → PlaylistController → Playlist → Shuffle\nusing the real songs.csv file · 9 tests"]
 
