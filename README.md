@@ -346,5 +346,54 @@ Agenda: Touchbase.
 | Rida | Finish PlaylistControllerTest.java file | Done | Finish playlist.java file |
 | Youssef | Finish FilterEngineTest.java (Boundary, Equivalence, and Filtering logic) | Done | Finish FilterEngine.java file |
 
+### 4.6 Meeting 6
+
+Time: Mar 11, 2026, 9:40 pm to 10:35 pm
+Agenda: Touchbase.
+| Team Member | Previous Task | Completion State | Next Task |
+|------------|---------------|------------------|-----------|
+| Nathan | Finish Song.java and Shuffle.java file | Done| work on integrating system (make sure files work together |
+| Rudra | Finish Songdatabase.java file | Done | Fwork on integrating system (make sure files work together |
+| Rida | Finish playlist.java file | Done | work on integrating system (make sure files work together |
+| Youssef | Finish FilterEngine.java file | Done | work on integrating system (make sure files work together |
+
+Time: Mar 25, 2026, 11:40am to 12:30pm
+Agenda: Touchbase.
+| Team Member | Previous Task | Completion State | Next Task |
+|------------|---------------|------------------|-----------|
+| Nathan | work on integrating system (make sure files work together | Done| Do Section 3 - 3.2 |
+| Rudra | work on integrating system (make sure files work together | Done | Do Section 3.3.4 |
+| Rida | work on integrating system (make sure files work together | Done | Do Section 3.3.2 and 3.3.3 |
+| Youssef | work on integrating system (make sure files work together | Done | Do Section 3.3.1 |
+
+Time: Mar April 5th, 2026, 9:40 pm to 10:35 pm
+Agenda: Touchbase.
+| Team Member | Previous Task | Completion State | Next Task |
+|------------|---------------|------------------|-----------|
+| Nathan | Do Section 3 - 3.2 | Done| Work on REPORT.md |
+| Rudra | Do Section 3.3.4 | Done | Work on extra tests (BVA, Use cases) |
+| Rida | Do Section 3.3.2 and 3.3.3 | Done | work on TESTING.md |
+| Youssef | Do Section 3.3.1 | Done | work on TESTING.md |
+
+Time: Mar April 5th, 2026, 5:00pm  to 6:15 pm
+Agenda: Touchbase.
+| Team Member | Previous Task | Completion State | Next Task |
+|------------|---------------|------------------|-----------|
+| Nathan | Do Section 3 - 3.2 | Done| Work on REPORT.md |
+| Rudra | Do Section 3.3.4 | Done | Work on extra tests (BVA, Use cases) |
+| Rida | Do Section 3.3.2 and 3.3.3 | Done | work on TESTING.md |
+| Youssef | Do Section 3.3.1 | Done | work on TESTING.md |
+
+Time: Mar April 8th, 2026, 12:45 pm to 1:35 pm
+Agenda: Touchbase.
+| Team Member | Previous Task | Completion State | Next Task |
+|------------|---------------|------------------|-----------|
+| Nathan | Work on REPORT.md | partial| Ensure new test cases pass, and work on Data Flow Models |
+| Rudra | Work on extra tests (BVA, Use cases) | Done | Ensure new test cases pass |
+| Rida | work on TESTING.md | partial | work on TESTING.md |
+| Youssef | work on TESTING.md | partial | work on TESTING.md |
+
+
+
 
 
