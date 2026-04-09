@@ -169,7 +169,7 @@ Verified manually during demo. Selecting option `0` in the CLI prints "Goodbye!"
 
 ---
 
-## 6. Decision Table Testing  *(Report only — no code required)*
+## 6. Decision Table Testing  *(Report only)*
 
 **Component:** `PlaylistController.generatePlaylist()`  
 **Conditions:** C1 = Genre validity, C2 = allowExplicit
@@ -187,7 +187,7 @@ Verified manually during demo. Selecting option `0` in the CLI prints "Goodbye!"
 
 ---
 
-## 7. State Transition Testing  *(Report only — no code required)*
+## 7. State Transition Testing  *(Report only)*
 
 **Component:** `PlaylistController`
 
