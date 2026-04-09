@@ -9,9 +9,9 @@ Testing is organized into two categories:
 
 | Category | Techniques | In Code? |
 |---|---|---|
-| **White-Box (Structural)** | Unit Testing, Data Flow (unit + integration) | ✅ Yes |
-| **Black-Box (Functional)** | Boundary Value, Use Case | ✅ Yes |
-| **Report-Only** | Decision Table, State Transition | 📄 Tables/diagrams below |
+| **White-Box (Structural)** | Unit Testing, Data Flow (unit + integration) | Yes |
+| **Black-Box (Functional)** | Boundary Value, Use Case | Yes |
+| **Report-Only** | Decision Table, State Transition | Tables/diagrams below |
 
 The primary function under test is `PlaylistController.generatePlaylist(String genre, boolean allowExplicit, int maxSongs)`.
 
@@ -258,6 +258,6 @@ Verified manually during demo. Selecting option `0` in the CLI prints "Goodbye!"
 | Data Flow — Integration | `DataFlowIntegrationTest.java` | 4 | Yes |
 | Boundary Value | `BoundaryValueTest.java` | 7 | Yes |
 | Use Case | `UseCaseTest.java` | 8 | Yes |
-| Decision Table | TESTING.md (Section 6) | — | 📄 Report only |
-| State Transition | TESTING.md (Section 7) | — | 📄 Report only |
+| Decision Table | TESTING.md (Section 6) | — | Report only |
+| State Transition | TESTING.md (Section 7) | — | Report only |
 | **Total executable** | | **67** | |
