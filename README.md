@@ -394,6 +394,13 @@ Agenda: Touchbase.
 | Youssef | work on TESTING.md | partial | work on TESTING.md |
 
 
-
+Time: Mar April 9th, 2026, 12:45 pm to 3:45 pm
+Agenda: Film Demo
+| Team Member | Previous Task | Completion State | Next Task |
+|------------|---------------|------------------|-----------|
+| Nathan | Ensure new test cases pass, and work on Data Flow Models | Done | Film Project Demo, and make final test case commits |
+| Rudra | Work on extra tests (BVA, Use cases) | Done | Film Project Demo, and make final test case commits |
+| Rida | work on TESTING.md | partial | Film Project Demo, and make final test case commits |
+| Youssef | work on TESTING.md | partial | Film Project Demo, and make final test case commits |
 
 
