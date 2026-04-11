@@ -33,8 +33,17 @@
     - [4.4 Meeting 4](#44-meeting-4)
     - [4.5 Meeting 5](#45-meeting-5)
     - [4.6 Meeting 6](#46-meeting-6)
+    - [4.6 Meeting 6](#46-meeting-7)
+    - [4.6 Meeting 6](#46-meeting-8)
+    - [4.6 Meeting 6](#46-meeting-9)
+    - [4.6 Meeting 6](#46-meeting-10)
+    - [4.6 Meeting 6](#46-meeting-11)
+    - [4.6 Meeting 6](#46-meeting-12)
+    - [4.6 Meeting 6](#46-meeting-13)
 
 
+---
+Demo Video Link: 
 ---
 
 ## List of Figures
@@ -42,7 +51,8 @@
 ---
 
 ## List of Tables
-
+- [Table 1 - Constraints Table](#Table-1-Constraints-Tables)
+- [Table 2 - Solution Comparison Table](#Table-2-Solution-Comparison-Table)
 ---
 
 ## 1.0 Introduction
@@ -98,6 +108,9 @@ To achieve these objectives, the project will:
 | Version Control | Git must be used for version control throughout the entire development process. |
 | Economic Constraints | The application must be developed using open-source tools and libraries only, with no paid APIs or licensing costs. Deployment must be possible on a low-cost hosting platform or via self-hosting, with scalability to moderate traffic. |
 | Societal & Ethical Considerations | The application must be inclusive and neutral, avoiding cultural, gender, or demographic bias in playlist generation logic and rule definitions. |
+
+_Table 1 - Constraints Table_
+
 ---
 
 ## 3.0 Solution
@@ -157,6 +170,8 @@ This design deliberately narrows the project scope compared to earlier solutions
 | Development Time      | High                   | Medium                      | Low                        |
 | Complexity            | High                   | Medium                      | Low                        |
 | Requirement Alignment | Weak                   | Partial                     | Strong                     |
+
+_Table 2 - Solution Comparison Table_
 
 
 ### 3.3.1 Components
@@ -335,7 +350,7 @@ Agenda: Set up Maven and assign roles.
 | Youssef | Finish Section 3.3.1 Solution 1 | Done | Finish FilterEngineTest.java (Boundary, Equivalence, and Filtering logic)  |
 
 
-### 4.6 Meeting 6
+### 4.6 Meeting 7
 
 Time: Mar 11, 2026, 9:40 pm to 10:35 pm
 Agenda: Touchbase.
@@ -346,7 +361,7 @@ Agenda: Touchbase.
 | Rida | Finish PlaylistControllerTest.java file | Done | Finish playlist.java file |
 | Youssef | Finish FilterEngineTest.java (Boundary, Equivalence, and Filtering logic) | Done | Finish FilterEngine.java file |
 
-### 4.6 Meeting 6
+### 4.6 Meeting 8
 
 Time: Mar 17, 2026, 8:40 pm to 9:35 pm
 Agenda: Touchbase.
@@ -357,6 +372,8 @@ Agenda: Touchbase.
 | Rida | Finish playlist.java file | Done | work on integrating system (make sure files work together |
 | Youssef | Finish FilterEngine.java file | Done | work on integrating system (make sure files work together |
 
+### 4.6 Meeting 9
+
 Time: Mar 25, 2026, 11:40am to 12:30pm
 Agenda: Touchbase.
 | Team Member | Previous Task | Completion State | Next Task |
@@ -365,6 +382,8 @@ Agenda: Touchbase.
 | Rudra | work on integrating system (make sure files work together | Done | Do Section 3.3.4 |
 | Rida | work on integrating system (make sure files work together | Done | Do Section 3.3.2 and 3.3.3 |
 | Youssef | work on integrating system (make sure files work together | Done | Do Section 3.3.1 |
+
+### 4.6 Meeting 10
 
 Time: Mar April 5th, 2026, 9:40 pm to 10:35 pm
 Agenda: Touchbase.
@@ -375,6 +394,8 @@ Agenda: Touchbase.
 | Rida | Do Section 3.3.2 and 3.3.3 | Done | work on TESTING.md |
 | Youssef | Do Section 3.3.1 | Done | work on TESTING.md |
 
+### 4.6 Meeting 11
+
 Time: Mar April 5th, 2026, 5:00pm  to 6:15 pm
 Agenda: Touchbase.
 | Team Member | Previous Task | Completion State | Next Task |
@@ -383,6 +404,8 @@ Agenda: Touchbase.
 | Rudra | Do Section 3.3.4 | Done | Work on extra tests (BVA, Use cases) |
 | Rida | Do Section 3.3.2 and 3.3.3 | Done | work on TESTING.md |
 | Youssef | Do Section 3.3.1 | Done | work on TESTING.md |
+
+### 4.6 Meeting 12
 
 Time: Mar April 8th, 2026, 12:45 pm to 1:35 pm
 Agenda: Touchbase.
@@ -393,6 +416,7 @@ Agenda: Touchbase.
 | Rida | work on TESTING.md | partial | work on TESTING.md |
 | Youssef | work on TESTING.md | partial | work on TESTING.md |
 
+### 4.6 Meeting 13
 
 Time: Mar April 9th, 2026, 12:45 pm to 3:45 pm
 Agenda: Film Demo
