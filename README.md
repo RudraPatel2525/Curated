@@ -41,18 +41,13 @@
     - [4.6 Meeting 6](#46-meeting-12)
     - [4.6 Meeting 6](#46-meeting-13)
 
-
----
-Demo Video Link: 
+Demo Video Link: https://youtu.be/Zf-hnDSQVY0 
 ---
 
 ## List of Figures
-
 ---
 
 ## List of Tables
-- [Table 1 - Constraints Table](#Table-1-Constraints-Tables)
-- [Table 2 - Solution Comparison Table](#Table-2-Solution-Comparison-Table)
 ---
 
 ## 1.0 Introduction
