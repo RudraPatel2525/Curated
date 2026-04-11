@@ -41,7 +41,8 @@
     - [4.6 Meeting 6](#46-meeting-12)
     - [4.6 Meeting 6](#46-meeting-13)
 
-Demo Video Link: https://youtu.be/Zf-hnDSQVY0 
+Demo Video Link: [https://youtu.be/Zf-hnDSQVY0](https://youtu.be/P3rzXchU-EQ)
+
 ---
 
 ## List of Figures
